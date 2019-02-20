@@ -24,26 +24,37 @@ public class Boxer1Attacks : MonoBehaviour {
 			anim.SetBool ("Cross", false);
 		}	
 
-		/*if (Input.GetButtonDown("Controller1BButton")) {
-			anim.SetBool ("Hook", true);
+		if (Input.GetButtonDown("Controller1BButton")) {
+			anim.SetBool ("BodyJab", true);
 		} else {
-			anim.SetBool ("Hook", false);
+			anim.SetBool ("BodyJab", false);
 		}	
 
 		if (Input.GetButtonDown("Controller1YButton")) {
-			anim.SetBool ("Uppercut", true);
+			anim.SetBool ("BodyCross", true);
 		} else {
-			anim.SetBool ("Uppercut", false);
-		}	*/
+			anim.SetBool ("BodyCross", false);
+		}	
 
-		if (Mathf.Round (Input.GetAxisRaw ("Controller1Triggers")) < 0) {
-			anim.SetBool ("LeftUppercut", true);
-		} else if (Mathf.Round (Input.GetAxisRaw ("Controller1Triggers")) > 0) {
+		if (Mathf.Round (Input.GetAxisRaw ("Controller1Triggers")) > 0) {
+			anim.SetBool ("LeftHook", true);
+		} else if (Mathf.Round (Input.GetAxisRaw ("Controller1Triggers")) < 0) {
 			anim.SetBool ("RightUppercut", true);
 		} else {
-			anim.SetBool ("LeftUppercut", false);
+			anim.SetBool ("LeftHook", false);
 			anim.SetBool ("RightUppercut", false);
-
 		}
+
+		/*if (Input.GetButtonDown("Controller1LeftBumper")) {
+			anim.SetBool ("LeftUppercut", true);
+		} else {
+			anim.SetBool ("LeftUppercut", false);
+		}
+
+		if (Input.GetButtonDown("Controller1RightBumper")) {
+			anim.SetBool ("RightHook", true);
+		} else {
+			anim.SetBool ("RightHook", false);
+		}	*/
 	}
 }

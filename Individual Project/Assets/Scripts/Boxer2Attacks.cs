@@ -23,5 +23,38 @@ public class Boxer2Attacks : MonoBehaviour {
 		} else {
 			anim.SetBool ("Cross", false);
 		}
+
+		if (Input.GetButtonDown("Controller2BButton")) {
+			anim.SetBool ("BodyJab", true);
+		} else {
+			anim.SetBool ("BodyJab", false);
+		}	
+
+		if (Input.GetButtonDown("Controller2YButton")) {
+			anim.SetBool ("BodyCross", true);
+		} else {
+			anim.SetBool ("BodyCross", false);
+		}	
+
+		if (Mathf.Round (Input.GetAxisRaw ("Controller2Triggers")) > 0) {
+			anim.SetBool ("LeftUppercut", true);
+		} else if (Mathf.Round (Input.GetAxisRaw ("Controller2Triggers")) < 0) {
+			anim.SetBool ("RightUppercut", true);
+		} else {
+			anim.SetBool ("LeftUppercut", false);
+			anim.SetBool ("RightUppercut", false);
+		}
+
+		if (Input.GetButtonDown("Controller2LeftBumper")) {
+			anim.SetBool ("LeftHook", true);
+		} else {
+			anim.SetBool ("LeftHook", false);
+		}	
+
+		if (Input.GetButtonDown("Controller2RightBumper")) {
+			anim.SetBool ("RightHook", true);
+		} else {
+			anim.SetBool ("RightHook", false);
+		}	
 	}
 }

@@ -46,7 +46,6 @@ public class Boxer1Movement : MonoBehaviour {
 		} else {
 			anim.SetBool ("MoveRight", false);
 		}
-			
 	}
 }
 

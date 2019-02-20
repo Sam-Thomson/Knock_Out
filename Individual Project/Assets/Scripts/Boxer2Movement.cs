@@ -20,8 +20,8 @@ public class Boxer2Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = Vector3.zero;
-		direction.z = Input.GetAxis ("Controller2Horizontal");
-		direction.x = Input.GetAxis ("Controller2Vertical");
+		direction.z = Input.GetAxisRaw ("Controller2Horizontal");
+		direction.x = Input.GetAxisRaw ("Controller2Vertical");
 		thisTransform.position = position + direction;
 		position = thisTransform.position;
 
