@@ -37,15 +37,15 @@ public class Boxer2Attacks : MonoBehaviour {
 		}	
 
 		if (Mathf.Round (Input.GetAxisRaw ("Controller2Triggers")) > 0) {
-			anim.SetBool ("LeftUppercut", true);
+			anim.SetBool ("LeftHook", true);
 		} else if (Mathf.Round (Input.GetAxisRaw ("Controller2Triggers")) < 0) {
 			anim.SetBool ("RightUppercut", true);
 		} else {
-			anim.SetBool ("LeftUppercut", false);
+			anim.SetBool ("LeftHook", false);
 			anim.SetBool ("RightUppercut", false);
 		}
 
-		if (Input.GetButtonDown("Controller2LeftBumper")) {
+		/*if (Input.GetButtonDown("Controller2LeftBumper")) {
 			anim.SetBool ("LeftHook", true);
 		} else {
 			anim.SetBool ("LeftHook", false);
@@ -55,6 +55,6 @@ public class Boxer2Attacks : MonoBehaviour {
 			anim.SetBool ("RightHook", true);
 		} else {
 			anim.SetBool ("RightHook", false);
-		}	
+		}	*/
 	}
 }

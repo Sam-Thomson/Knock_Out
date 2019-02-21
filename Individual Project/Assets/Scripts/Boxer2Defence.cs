@@ -2,20 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boxer1Defence : MonoBehaviour {
-	
+public class Boxer2Defence : MonoBehaviour {
 	public Animator anim;
-
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator> ();
 	}
+	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Controller1LeftStick")) {
-			if (Input.GetButton ("Controller1LeftBumper")) {
+		if (Input.GetButtonDown("Controller2LeftStick")) {
+			if (Input.GetButton ("Controller2LeftBumper")) {
 				anim.SetBool ("LeftDodge", true);
-			} else if (Input.GetButton("Controller1RightBumper")) {
+			} else if (Input.GetButton("Controller2RightBumper")) {
 				anim.SetBool ("RightDodge", true);
 			} else {
 				anim.SetBool ("BackDodge", true);
@@ -27,10 +26,10 @@ public class Boxer1Defence : MonoBehaviour {
 			anim.SetBool ("RightDodge", false);
 		}
 
-		if (Input.GetButtonDown("Controller1RightStick")) {
-			if (Input.GetButton ("Controller1LeftBumper")) {
+		if (Input.GetButtonDown("Controller2RightStick")) {
+			if (Input.GetButton ("Controller2LeftBumper")) {
 				anim.SetBool ("LeftBlock", true);
-			} else if (Input.GetButton("Controller1RightBumper")) {
+			} else if (Input.GetButton("Controller2RightBumper")) {
 				anim.SetBool ("RightBlock", true);
 			} else {
 				anim.SetBool ("CentreBlock", true);
@@ -43,4 +42,3 @@ public class Boxer1Defence : MonoBehaviour {
 		}
 	}
 }
-

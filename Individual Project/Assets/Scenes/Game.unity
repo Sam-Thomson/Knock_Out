@@ -4966,7 +4966,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
-  s: 0
 --- !u!65 &1543896989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5472,6 +5471,7 @@ GameObject:
   - component: {fileID: 1666517694}
   - component: {fileID: 1666517696}
   - component: {fileID: 1666517697}
+  - component: {fileID: 1666517698}
   m_Layer: 0
   m_Name: Boxer 2
   m_TagString: Untagged
@@ -5537,6 +5537,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e625e6c267deb914988eb255f9a2cfed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+--- !u!114 &1666517698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666517693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e808c4861a323af41938a4edc2309e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
