@@ -8,7 +8,8 @@ public class Boxer1Movement : MonoBehaviour {
 	private Vector3 position;
 	private Transform thisTransform;
 	public Animator anim;
-
+	private float playerSpeed = 7.5f;
+	private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class Boxer1Movement : MonoBehaviour {
 		position = thisTransform.position;
 		startPosition = position;
 		anim = this.gameObject.GetComponent<Animator> ();
+		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -23,15 +25,21 @@ public class Boxer1Movement : MonoBehaviour {
 		Vector3 direction = Vector3.zero;
 		direction.z = Input.GetAxis ("Controller1Horizontal");
 		direction.x = Input.GetAxis ("Controller1Vertical");
-		thisTransform.position = position + direction;
-		position = thisTransform.position;
 
-		if (direction.x < 0) {
+		float xMovement = (Input.GetAxis ("Controller1Horizontal") * playerSpeed) * Time.deltaTime;
+		float zMovement = (Input.GetAxis ("Controller1Vertical")* playerSpeed) * Time.deltaTime;
+
+		Vector3 playerMovement = new Vector3 (xMovement, 0.0f, zMovement);
+		transform.Translate (playerMovement * playerSpeed);
+		//thisTransform.position = position + direction;
+		//position = thisTransform.position;
+
+		if (direction.x > 0) {
 			anim.SetBool ("MoveForward", true);
 		} else {
 			anim.SetBool ("MoveForward", false);
 		}
-		if (direction.x > 0) {
+		if (direction.x < 0) {
 			anim.SetBool ("MoveBackward", true);
 		} else {
 			anim.SetBool ("MoveBackward", false);
