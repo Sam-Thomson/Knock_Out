@@ -45,16 +45,6 @@ public class Boxer1Attacks : MonoBehaviour {
 			anim.SetBool ("RightUppercut", false);
 		}
 
-		/*if (Input.GetButtonDown("Controller1LeftBumper")) {
-			anim.SetBool ("LeftUppercut", true);
-		} else {
-			anim.SetBool ("LeftUppercut", false);
-		}
-
-		if (Input.GetButtonDown("Controller1RightBumper")) {
-			anim.SetBool ("RightHook", true);
-		} else {
-			anim.SetBool ("RightHook", false);
-		}	*/
+	
 	}
 }

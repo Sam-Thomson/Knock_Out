@@ -7,9 +7,12 @@ public class Boxer1Movement : MonoBehaviour {
 	private Vector3 startPosition;
 	private Vector3 position;
 	private Transform thisTransform;
-	public Animator anim;
 	private float playerSpeed = 7.5f;
 	private Rigidbody rb;
+
+	public Animator anim;
+	public Transform lockOnBoxer;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,8 @@ public class Boxer1Movement : MonoBehaviour {
 		Vector3 direction = Vector3.zero;
 		direction.z = Input.GetAxis ("Controller1Horizontal");
 		direction.x = Input.GetAxis ("Controller1Vertical");
+
+		transform.LookAt(lockOnBoxer);
 
 		float xMovement = (Input.GetAxis ("Controller1Horizontal") * playerSpeed) * Time.deltaTime;
 		float zMovement = (Input.GetAxis ("Controller1Vertical")* playerSpeed) * Time.deltaTime;
@@ -54,6 +59,27 @@ public class Boxer1Movement : MonoBehaviour {
 		} else {
 			anim.SetBool ("MoveRight", false);
 		}
+
+		if(Input.GetKeyDown (KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+			
 	}
+
+	void OnCollisionEnter(Collision other) 
+	{
+		if (other.gameObject.tag == "Rope") {
+			rb.constraints = RigidbodyConstraints.FreezeRotation;
+		}
+	}
+
+	void OnCollisionExit(Collision other) 
+	{
+		if (other.gameObject.tag == "Rope") {
+			rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+		}
+	}
+		
 }
 

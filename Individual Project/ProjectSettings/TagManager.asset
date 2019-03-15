@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Attack
+  - Fall
+  - CloudStopper
+  - Boxer1Left
+  - Boxer1Right
+  - Boxer2Left
+  - Boxer2Right
+  - Rope
+  - B1Head
   layers:
   - Default
   - TransparentFX

@@ -22,10 +22,6 @@ public class Cam : MonoBehaviour {
 
 	void LateUpdate()
 	{
-
-		if (players.Count == 0) {
-			return;
-		}
 			
 		CameraMovement();
 		CameraZoom();
