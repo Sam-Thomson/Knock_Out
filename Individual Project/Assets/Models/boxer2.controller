@@ -881,7 +881,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BodyCross
+  m_Name: Body_Cross
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -959,7 +959,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RightUppercut
+  m_Name: Right_Uppercut
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -973,7 +973,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1d740602838d16f4dbe3f72eeb2b63ad, type: 3}
+  m_Motion: {fileID: 7400000, guid: e1c98374c2707a24dae3b9dbdbe2ddf1, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1037,7 +1037,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LeftHook
+  m_Name: Left_Hook
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1051,7 +1051,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 35ff3830d56d5ec429643e082eeb33dc, type: 3}
+  m_Motion: {fileID: 7400000, guid: b7daf6e9110a2cd46adc4e857617dca0, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1181,7 +1181,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e5b716a6f398b674496782b9f4577b86, type: 3}
+  m_Motion: {fileID: 7400000, guid: cc4a8857df1c1404d9b40e47f1dd9511, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1245,7 +1245,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: BodyJab
+  m_Name: Body_Jab
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

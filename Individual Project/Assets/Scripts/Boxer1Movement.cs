@@ -36,8 +36,7 @@ public class Boxer1Movement : MonoBehaviour {
 
 		Vector3 playerMovement = new Vector3 (xMovement, 0.0f, zMovement);
 		transform.Translate (playerMovement * playerSpeed);
-		//thisTransform.position = position + direction;
-		//position = thisTransform.position;
+
 
 		if (direction.x > 0) {
 			anim.SetBool ("MoveForward", true);

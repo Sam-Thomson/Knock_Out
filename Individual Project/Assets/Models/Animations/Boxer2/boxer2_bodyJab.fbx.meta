@@ -107,7 +107,7 @@ ModelImporter:
     4300002: proxy741.obj.001
     4300004: proxy741.obj
     4300006: high-poly.obj
-    7400000: BodyJab
+    7400000: Body_Jab
     9500000: //RootNode
     10800000: Lamp
     13700000: high-poly.obj
@@ -142,7 +142,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BodyJab
+      name: Body_Jab
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 27

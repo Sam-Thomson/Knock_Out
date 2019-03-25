@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boxer1Health : MonoBehaviour {
+public class Boxer2Health : MonoBehaviour {
 
 	[SerializeField]
 	Slider healthbar;

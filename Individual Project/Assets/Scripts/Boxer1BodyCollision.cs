@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boxer1HeadCollision : MonoBehaviour {
+public class Boxer1BodyCollision : MonoBehaviour {
 
 	public Boxer1Health damage;
 	public Boxer2Attacks callAttack;
@@ -19,24 +19,15 @@ public class Boxer1HeadCollision : MonoBehaviour {
 		foundAttack = callAttack.attack;
 		if(other.gameObject.tag == "Boxer2Left")
 		{
-			if (foundAttack == 1) {
-				damage.jabHit();
-			}
-
-			if (foundAttack == 3) {
-				damage.hookHit();
+			if (foundAttack == 5) {
+				damage.bodyJab();
 			}
 
 		} else if(other.gameObject.tag == "Boxer2Right")
 		{
-			if (foundAttack == 2) {
-				damage.crossHit();
+			if (foundAttack == 6) {
+				damage.bodyCross();
 			}
-
-			if (foundAttack == 4) {
-				damage.uppercutHit();
-			}
-
 		}
 	}
 }

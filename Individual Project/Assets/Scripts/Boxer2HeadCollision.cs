@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boxer1HeadCollision : MonoBehaviour {
+public class Boxer2HeadCollision : MonoBehaviour {
 
-	public Boxer1Health damage;
-	public Boxer2Attacks callAttack;
+	public Boxer2Health damage;
+	public Boxer1Attacks callAttack;
 	public int foundAttack;
 
 	// Use this for initialization
 	void Start () {
-		damage = FindObjectOfType<Boxer1Health>();
+		damage = FindObjectOfType<Boxer2Health>();
 	}
 
 
 	public void OnTriggerEnter(Collider other){
-		callAttack = FindObjectOfType<Boxer2Attacks>();
+		callAttack = FindObjectOfType<Boxer1Attacks>();
 		foundAttack = callAttack.attack;
-		if(other.gameObject.tag == "Boxer2Left")
+		if(other.gameObject.tag == "Boxer1Left")
 		{
 			if (foundAttack == 1) {
 				damage.jabHit();
@@ -27,7 +27,7 @@ public class Boxer1HeadCollision : MonoBehaviour {
 				damage.hookHit();
 			}
 
-		} else if(other.gameObject.tag == "Boxer2Right")
+		} else if(other.gameObject.tag == "Boxer1Right")
 		{
 			if (foundAttack == 2) {
 				damage.crossHit();
