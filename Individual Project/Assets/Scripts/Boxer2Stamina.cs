@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boxer1Stamina : MonoBehaviour {
+public class Boxer2Stamina : MonoBehaviour {
 
 	[SerializeField]
 	Slider staminabar;
@@ -17,7 +17,7 @@ public class Boxer1Stamina : MonoBehaviour {
 		staminabar.value = maxStamina;
 		//currentStamina = staminabar.value;
 	}*/
-	
+
 	public void jabStamina() {
 		staminabar.value -= 10f;
 		//currentStamina = staminabar.value;

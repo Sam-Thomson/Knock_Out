@@ -138,7 +138,7 @@ public class Boxer1Attacks : MonoBehaviour {
 			}
 		}*/
 
-		if (Input.GetButtonDown("Controller1LeftBumper")) {
+		if (Input.GetButton("Controller1LeftBumper")) {
 			anim.SetBool ("LeftHook", true);
 			attack = 3;
 			if (Input.GetButtonDown ("Controller1LeftBumper")) {
@@ -161,7 +161,7 @@ public class Boxer1Attacks : MonoBehaviour {
 			}
 		}	
 
-		if (Input.GetButtonDown("Controller1RightBumper")) {
+		if (Input.GetButton("Controller1RightBumper")) {
 			anim.SetBool ("RightUppercut", true);
 			attack = 4;
 			if (Input.GetButtonDown ("Controller1RightBumper")) {
