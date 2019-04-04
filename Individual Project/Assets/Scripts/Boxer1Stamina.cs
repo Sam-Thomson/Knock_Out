@@ -9,28 +9,28 @@ public class Boxer1Stamina : MonoBehaviour {
 	Slider staminabar;
 
 	float maxStamina = 100f;
-	//public float currentStamina;
+	public float currentStamina = 100f;
 
-	float recoverSpeed = 2f;
+	float recoverSpeed = 10f;
 
 	/*void Start () {
 		staminabar.value = maxStamina;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}*/
 	
 	public void jabStamina() {
 		staminabar.value -= 10f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void crossStamina() {
 		staminabar.value -= 12f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void hookStamina() {
 		staminabar.value -= 15f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void uppercutStamina() {
@@ -40,26 +40,26 @@ public class Boxer1Stamina : MonoBehaviour {
 
 	public void bodyJabStamina() {
 		staminabar.value -= 8f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void bodyCrossStamina() {
 		staminabar.value -= 10f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void blockStamina() {
 		staminabar.value -= 5f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void dodgeStamina() {
 		staminabar.value -= 20f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	void Update () {
 		staminabar.value += recoverSpeed * Time.deltaTime;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 }

@@ -6,15 +6,17 @@ public class Boxer2Defence : MonoBehaviour {
 	public Animator anim;
 
 	public Boxer2Stamina stamina;
+	public float currentStamina;
 
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator> ();
-		stamina = FindObjectOfType<Boxer2Stamina>();
 	}
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Controller2LeftStick")) {
+		stamina = FindObjectOfType<Boxer2Stamina>();
+		currentStamina = stamina.currentStamina;
+		if (Input.GetButtonDown("Controller2LeftStick") && currentStamina >= 20f) {
 			anim.SetBool ("BackDodge", true);
 			stamina.dodgeStamina();
 
@@ -22,7 +24,7 @@ public class Boxer2Defence : MonoBehaviour {
 			anim.SetBool ("BackDodge", false);
 		}
 
-		if (Input.GetButtonDown("Controller2RightStick")) {
+		if (Input.GetButtonDown("Controller2RightStick") && currentStamina >= 5f) {
 			anim.SetBool ("CentreBlock", true);
 			stamina.blockStamina();
 

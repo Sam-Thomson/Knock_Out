@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boxer1Health : MonoBehaviour {
+	//public Animator anim;
 
 	[SerializeField]
 	Slider healthbar;
@@ -11,7 +12,9 @@ public class Boxer1Health : MonoBehaviour {
 	float maxHealth = 100f;
 	float currentHealth;
 
-	void start(){
+	void Start (){
+		//anim = this.gameObject.GetComponent<Animator> ();
+
 		healthbar.value = maxHealth;
 		currentHealth = healthbar.value;
 	}
@@ -45,4 +48,10 @@ public class Boxer1Health : MonoBehaviour {
 		healthbar.value -= 6.5f;
 		currentHealth = healthbar.value;
 	}
+
+	/*void Update (){
+		if (currentHealth == 0) {
+			anim.SetBool ("KnockOut", true);
+		}
+	}*/
 }

@@ -13,6 +13,9 @@ public class Boxer2Movement : MonoBehaviour {
 	public Animator anim;
 	public Transform lockOnBoxer;
 
+	public Boxer2Health KnockedDown;
+	public bool down;
+
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +28,9 @@ public class Boxer2Movement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		KnockedDown = FindObjectOfType<Boxer2Health>();
+		down = KnockedDown.down;
+		if(down == false){
 		Vector3 direction = Vector3.zero;
 		direction.z = Input.GetAxisRaw ("Controller2Horizontal");
 		direction.x = Input.GetAxisRaw ("Controller2Vertical");
@@ -60,8 +66,9 @@ public class Boxer2Movement : MonoBehaviour {
 			anim.SetBool ("MoveRight", false);
 		}
 	}
+	}
 
-	void OnCollisionEnter(Collision other) 
+	/*void OnCollisionEnter(Collision other) 
 	{
 		if (other.gameObject.tag == "Rope") {
 			rb.constraints = RigidbodyConstraints.FreezeRotation;
@@ -74,6 +81,6 @@ public class Boxer2Movement : MonoBehaviour {
 		if (other.gameObject.tag == "Rope") {
 			rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
 		}
-	}
+	}*/
 
 }

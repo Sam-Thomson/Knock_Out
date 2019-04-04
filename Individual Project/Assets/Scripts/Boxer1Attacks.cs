@@ -6,27 +6,27 @@ public class Boxer1Attacks : MonoBehaviour {
 	public Animator anim;
 	public int attack = 0;
 
-	float delayTimer = 5.0f;
-	float currentDelayTimer;
+	float delayTimer = 5f;
+	public float currentDelayTimer;
 
 	public Boxer1Stamina stamina;
+	public float currentStamina;
 
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator> ();
 		currentDelayTimer = delayTimer;
-
-		stamina = FindObjectOfType<Boxer1Stamina>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButton("Controller1AButton")) {
+		stamina = FindObjectOfType<Boxer1Stamina>();
+		currentStamina = stamina.currentStamina;
+		if (Input.GetButtonDown("Controller1AButton") && currentStamina >= 10f) {
 			anim.SetBool ("Jab", true);
 			attack = 1;
-			if (Input.GetButtonDown ("Controller1AButton")) {
-				stamina.jabStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.jabStamina();
 		} else {
 			anim.SetBool ("Jab", false);
 			if (currentDelayTimer > 0) 
@@ -38,18 +38,17 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
+
 		}	
 
-		if (Input.GetButton("Controller1XButton")) {
+		if (Input.GetButtonDown("Controller1XButton") && currentStamina >= 12f) {
 			anim.SetBool ("Cross", true);
 			attack = 2;
-			if (Input.GetButtonDown ("Controller1XButton")) {
-				stamina.crossStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.crossStamina();
 		} else {
 			anim.SetBool ("Cross", false);
 			if (currentDelayTimer > 0) 
@@ -61,18 +60,17 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
+				
 		}	
 
-		if (Input.GetButton("Controller1BButton")) {
+		if (Input.GetButtonDown("Controller1BButton") && currentStamina >= 8f) {
 			anim.SetBool ("BodyJab", true);
 			attack = 5;
-			if (Input.GetButtonDown ("Controller1BButton")) {
-				stamina.bodyJabStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.bodyJabStamina();
 		} else {
 			anim.SetBool ("BodyJab", false);
 			if (currentDelayTimer > 0) 
@@ -84,18 +82,16 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
 		}	
 
-		if (Input.GetButton("Controller1YButton")) {
+		if (Input.GetButtonDown("Controller1YButton") && currentStamina >= 10f) {
 			anim.SetBool ("BodyCross", true);
 			attack = 6;
-			if (Input.GetButtonDown ("Controller1YButton")) {
-				stamina.bodyCrossStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.bodyCrossStamina();
 		} else {
 			anim.SetBool ("BodyCross", false);
 			if (currentDelayTimer > 0) 
@@ -107,7 +103,6 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
@@ -138,12 +133,11 @@ public class Boxer1Attacks : MonoBehaviour {
 			}
 		}*/
 
-		if (Input.GetButton("Controller1LeftBumper")) {
+		if (Input.GetButtonDown("Controller1LeftBumper") && currentStamina >= 15f) {
 			anim.SetBool ("LeftHook", true);
 			attack = 3;
-			if (Input.GetButtonDown ("Controller1LeftBumper")) {
-				stamina.hookStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.hookStamina();
 		} else {
 			anim.SetBool ("LeftHook", false);
 			if (currentDelayTimer > 0) 
@@ -155,18 +149,16 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
 		}	
 
-		if (Input.GetButton("Controller1RightBumper")) {
+		if (Input.GetButtonDown("Controller1RightBumper") && currentStamina >= 18f) {
 			anim.SetBool ("RightUppercut", true);
 			attack = 4;
-			if (Input.GetButtonDown ("Controller1RightBumper")) {
-				stamina.uppercutStamina();
-			}
+			currentDelayTimer = delayTimer;
+			stamina.uppercutStamina();
 		} else {
 			anim.SetBool ("RightUppercut", false);
 			if (currentDelayTimer > 0) 
@@ -178,7 +170,6 @@ public class Boxer1Attacks : MonoBehaviour {
 					if(currentDelayTimer == 0)
 					{
 						attack = 0;
-						currentDelayTimer = delayTimer;
 					}
 				}
 			}
