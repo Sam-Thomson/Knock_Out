@@ -13,6 +13,9 @@ public class Boxer1Movement : MonoBehaviour {
 	public Animator anim;
 	public Transform lockOnBoxer;
 
+	public Boxer1Health KnockedDown;
+	public bool down;
+
 	public Boxer2Health boxer2KnockedDown;
 	public bool boxer2Down;
 
@@ -27,9 +30,11 @@ public class Boxer1Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		KnockedDown = FindObjectOfType<Boxer1Health>();
+		down = KnockedDown.down;
 		boxer2KnockedDown = FindObjectOfType<Boxer2Health>();
 		boxer2Down = boxer2KnockedDown.down;
-		if (boxer2Down == false) {
+		if (down == false && boxer2Down == false) {
 			Vector3 direction = Vector3.zero;
 			direction.z = Input.GetAxis ("Controller1Horizontal");
 			direction.x = Input.GetAxis ("Controller1Vertical");

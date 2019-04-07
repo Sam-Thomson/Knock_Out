@@ -6908,6 +6908,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   lockOnBoxer: {fileID: 1666517695}
+  KnockedDown: {fileID: 0}
+  down: 0
+  boxer2KnockedDown: {fileID: 0}
+  boxer2Down: 0
 --- !u!114 &1543896987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6924,6 +6928,10 @@ MonoBehaviour:
   currentDelayTimer: 0
   stamina: {fileID: 0}
   currentStamina: 0
+  boxer1KnockedDown: {fileID: 0}
+  boxer1Down: 0
+  boxer2KnockedDown: {fileID: 0}
+  boxer2Down: 0
 --- !u!114 &1543896988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6938,6 +6946,10 @@ MonoBehaviour:
   anim: {fileID: 0}
   stamina: {fileID: 0}
   currentStamina: 0
+  boxer1KnockedDown: {fileID: 0}
+  boxer1Down: 0
+  boxer2KnockedDown: {fileID: 0}
+  boxer2Down: 0
 --- !u!65 &1543896989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6976,6 +6988,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48365838d78b7a4a831d03e9cc2c9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  down: 0
   healthbar: {fileID: 1719824392}
 --- !u!114 &1543896992
 MonoBehaviour:
@@ -7913,6 +7927,8 @@ MonoBehaviour:
   lockOnBoxer: {fileID: 1543896985}
   KnockedDown: {fileID: 0}
   down: 0
+  boxer1KnockedDown: {fileID: 0}
+  boxer1Down: 0
 --- !u!114 &1666517697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7928,6 +7944,10 @@ MonoBehaviour:
   attack: 0
   stamina: {fileID: 0}
   currentStamina: 0
+  boxer1KnockedDown: {fileID: 0}
+  boxer1Down: 0
+  boxer2KnockedDown: {fileID: 0}
+  boxer2Down: 0
 --- !u!114 &1666517698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7942,6 +7962,10 @@ MonoBehaviour:
   anim: {fileID: 0}
   stamina: {fileID: 0}
   currentStamina: 0
+  boxer1KnockedDown: {fileID: 0}
+  boxer1Down: 0
+  boxer2KnockedDown: {fileID: 0}
+  boxer2Down: 0
 --- !u!54 &1666517699
 Rigidbody:
   m_ObjectHideFlags: 0

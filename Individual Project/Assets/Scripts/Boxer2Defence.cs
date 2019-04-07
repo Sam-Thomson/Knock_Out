@@ -8,28 +8,41 @@ public class Boxer2Defence : MonoBehaviour {
 	public Boxer2Stamina stamina;
 	public float currentStamina;
 
+	public Boxer1Health boxer1KnockedDown;
+	public bool boxer1Down;
+
+	public Boxer2Health boxer2KnockedDown;
+	public bool boxer2Down;
+
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator> ();
 	}
 	// Update is called once per frame
 	void Update () {
-		stamina = FindObjectOfType<Boxer2Stamina>();
+		stamina = FindObjectOfType<Boxer2Stamina> ();
 		currentStamina = stamina.currentStamina;
-		if (Input.GetButtonDown("Controller2LeftStick") && currentStamina >= 20f) {
-			anim.SetBool ("BackDodge", true);
-			stamina.dodgeStamina();
+		boxer1KnockedDown = FindObjectOfType<Boxer1Health> ();
+		boxer1Down = boxer1KnockedDown.down;
+		boxer2KnockedDown = FindObjectOfType<Boxer2Health> ();
+		boxer2Down = boxer2KnockedDown.down;
 
-		} else {
-			anim.SetBool ("BackDodge", false);
-		}
+		if (boxer1Down == false && boxer2Down == false) {
+			if (Input.GetButtonDown ("Controller2LeftStick") && currentStamina >= 20f) {
+				anim.SetBool ("BackDodge", true);
+				stamina.dodgeStamina ();
 
-		if (Input.GetButtonDown("Controller2RightStick") && currentStamina >= 5f) {
-			anim.SetBool ("CentreBlock", true);
-			stamina.blockStamina();
+			} else {
+				anim.SetBool ("BackDodge", false);
+			}
 
-		} else {
-			anim.SetBool ("CentreBlock", false);
+			if (Input.GetButtonDown ("Controller2RightStick") && currentStamina >= 5f) {
+				anim.SetBool ("CentreBlock", true);
+				stamina.blockStamina ();
+
+			} else {
+				anim.SetBool ("CentreBlock", false);
+			}
 		}
 	}
 }

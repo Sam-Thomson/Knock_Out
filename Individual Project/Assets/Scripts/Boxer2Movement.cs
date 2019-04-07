@@ -16,6 +16,8 @@ public class Boxer2Movement : MonoBehaviour {
 	public Boxer2Health KnockedDown;
 	public bool down;
 
+	public Boxer1Health boxer1KnockedDown;
+	public bool boxer1Down;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +32,10 @@ public class Boxer2Movement : MonoBehaviour {
 	void Update () {
 		KnockedDown = FindObjectOfType<Boxer2Health>();
 		down = KnockedDown.down;
-		if(down == false){
+		boxer1KnockedDown = FindObjectOfType<Boxer1Health>();
+		boxer1Down = boxer1KnockedDown.down;
+
+		if(down == false && boxer1Down == false){
 		Vector3 direction = Vector3.zero;
 		direction.z = Input.GetAxisRaw ("Controller2Horizontal");
 		direction.x = Input.GetAxisRaw ("Controller2Vertical");

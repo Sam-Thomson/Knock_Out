@@ -57,4 +57,10 @@ public class Boxer2Health : MonoBehaviour {
 			down = true;
 		}
 	}
+
+	public void boxer2Up(){
+		down = false;
+		healthbar.value += 30f;
+		anim.SetBool ("KnockOut", false);
+	}
 }
