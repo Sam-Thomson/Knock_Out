@@ -22,7 +22,7 @@ public class Boxer2Health : MonoBehaviour {
 	}
 
 	public void jabHit(){
-		healthbar.value -= 5f;
+		healthbar.value -= 100f;
 		currentHealth = healthbar.value;
 	}
 

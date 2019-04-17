@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boxer1Attacks : MonoBehaviour {
 	public Animator anim;
@@ -18,7 +19,18 @@ public class Boxer1Attacks : MonoBehaviour {
 	public Boxer2Health boxer2KnockedDown;
 	public bool boxer2Down;
 
-	int downCount = 0;
+	public Transform ProgressBar;
+
+	[SerializeField]
+	float progressAmount;
+
+	[SerializeField]
+	Image aButton;
+
+	[SerializeField]
+	Image aButtonProgress;
+
+	//int downCount = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -171,14 +183,22 @@ public class Boxer1Attacks : MonoBehaviour {
 				}
 			}
 
-		} else if (boxer1Down == true) {
+		} /*else if (boxer1Down == true) {
+			aButton.enabled = true;
+			aButtonProgress.enabled = true;
 			if(Input.GetButtonDown ("Controller1AButton")) {
-				downCount++;
+				//downCount++;
+				progressAmount = progressAmount + 0.1f;
+				//ProgressBar.GetComponent<Image> ().fillAmount = progressAmount;
 			}
-			if (downCount >= 10) {
+			if (progressAmount >= 1) {
 				boxer1KnockedDown.boxer1Up ();
+				aButton.enabled = false;
+				aButtonProgress.enabled = false;
+				progressAmount = 0;
 			}
-		}
+			ProgressBar.GetComponent<Image> ().fillAmount = progressAmount;
+		}*/
 			
 	}
 }
