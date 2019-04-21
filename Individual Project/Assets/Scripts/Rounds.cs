@@ -12,6 +12,14 @@ public class Rounds : MonoBehaviour {
 	public Text roundNumberText;
 	public static float timer;
 
+	public Boxer1Movement boxer1Position;
+	public Boxer2Movement boxer2Position;
+
+	void Start() {
+		boxer1Position = FindObjectOfType<Boxer1Movement>();
+		boxer2Position = FindObjectOfType<Boxer2Movement>();
+	}
+		
 	private void Update()
 	{
 		roundTime -= Time.deltaTime;
@@ -31,6 +39,8 @@ public class Rounds : MonoBehaviour {
 		{
 			roundTime = 120f;
 			roundNumber++;
+			boxer1Position.resetPosition();
+			boxer2Position.resetPosition();
 		}
 	}
 }

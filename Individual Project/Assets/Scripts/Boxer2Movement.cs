@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Boxer2Movement : MonoBehaviour {
 
-	private Vector3 startPosition;
-	private Vector3 position;
-	private Transform thisTransform;
+	public Vector3 startPosition;
 	private float playerSpeed = 7.5f;
 	private Rigidbody rb;
 
@@ -21,11 +19,9 @@ public class Boxer2Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thisTransform = transform;
-		position = thisTransform.position;
-		startPosition = position;
 		anim = this.gameObject.GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody>();
+		startPosition = transform.position;
 	}
 
 	// Update is called once per frame
@@ -47,8 +43,7 @@ public class Boxer2Movement : MonoBehaviour {
 
 		Vector3 playerMovement = new Vector3 (xMovement, 0.0f, zMovement);
 		transform.Translate (playerMovement * playerSpeed);
-		//thisTransform.position = position + direction;
-		//position = thisTransform.position;
+		
 
 		if (direction.x > 0) {
 			anim.SetBool ("MoveForward", true);
@@ -70,22 +65,11 @@ public class Boxer2Movement : MonoBehaviour {
 		} else {
 			anim.SetBool ("MoveRight", false);
 		}
-	}
-	}
-
-	/*void OnCollisionEnter(Collision other) 
-	{
-		if (other.gameObject.tag == "Rope") {
-			rb.constraints = RigidbodyConstraints.FreezeRotation;
 		}
-
 	}
 
-	void OnCollisionExit(Collision other) 
-	{
-		if (other.gameObject.tag == "Rope") {
-			rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-		}
-	}*/
+	public void resetPosition() {
+		transform.position = startPosition;
+	}
 
 }

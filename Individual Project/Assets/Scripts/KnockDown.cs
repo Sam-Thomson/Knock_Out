@@ -63,7 +63,6 @@ public class KnockDown : MonoBehaviour {
 			KDCText.enabled = true;
 			if(Input.GetButtonDown ("Controller2AButton")) {
 				progressAmount = progressAmount + 0.1f;
-				//ProgressBar.GetComponent<Image> ().fillAmount = progressAmount;
 			}
 			if (progressAmount >= 1) {
 				boxer2KnockedDown.boxer2Up ();
