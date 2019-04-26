@@ -172,13 +172,6 @@ public class Boxer2Attacks : MonoBehaviour {
 					}
 				}
 			}
-		} else if (boxer2Down == true) {
-			if(Input.GetButtonDown ("Controller2AButton")) {
-				downCount++;
-			}
-			if (downCount >= 10) {
-				boxer2KnockedDown.boxer2Up ();
-			}
-		}
+		} 
 	}
 }

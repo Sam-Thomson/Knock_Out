@@ -15,6 +15,11 @@ public class Boxer1Defence : MonoBehaviour {
 	public Boxer2Health boxer2KnockedDown;
 	public bool boxer2Down;
 
+	public Boxer2Attacks boxer2Attacks;
+	public int attackType;
+
+	public PointCounter pointIncrease;
+
 	// Use this for initialization
 	void Start () {
 		anim = this.gameObject.GetComponent<Animator> ();
@@ -27,11 +32,17 @@ public class Boxer1Defence : MonoBehaviour {
 		boxer1Down = boxer1KnockedDown.down;
 		boxer2KnockedDown = FindObjectOfType<Boxer2Health> ();
 		boxer2Down = boxer2KnockedDown.down;
+		boxer2Attacks = FindObjectOfType<Boxer2Attacks> ();
+		attackType = boxer2Attacks.attack;
+		pointIncrease = FindObjectOfType<PointCounter> ();
 
 		if (boxer1Down == false && boxer2Down == false) {
 			if (Input.GetButtonDown ("Controller1LeftStick") && currentStamina >= 20f) {
 				anim.SetBool ("BackDodge", true);
 				stamina.dodgeStamina ();
+				if (attackType != 0) {
+					pointIncrease.boxer1DefencePoints ();
+				}
 
 			} else {
 				anim.SetBool ("BackDodge", false);
@@ -40,6 +51,9 @@ public class Boxer1Defence : MonoBehaviour {
 			if (Input.GetButtonDown ("Controller1RightStick") && currentStamina >= 5f) {
 				anim.SetBool ("CentreBlock", true);
 				stamina.blockStamina ();
+				if (attackType != 0) {
+					pointIncrease.boxer1DefencePoints ();
+				}
 
 			} else {
 				anim.SetBool ("CentreBlock", false);

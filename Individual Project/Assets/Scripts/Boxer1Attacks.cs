@@ -183,22 +183,6 @@ public class Boxer1Attacks : MonoBehaviour {
 				}
 			}
 
-		} /*else if (boxer1Down == true) {
-			aButton.enabled = true;
-			aButtonProgress.enabled = true;
-			if(Input.GetButtonDown ("Controller1AButton")) {
-				//downCount++;
-				progressAmount = progressAmount + 0.1f;
-				//ProgressBar.GetComponent<Image> ().fillAmount = progressAmount;
-			}
-			if (progressAmount >= 1) {
-				boxer1KnockedDown.boxer1Up ();
-				aButton.enabled = false;
-				aButtonProgress.enabled = false;
-				progressAmount = 0;
-			}
-			ProgressBar.GetComponent<Image> ().fillAmount = progressAmount;
-		}*/
-			
+		} 
 	}
 }
