@@ -13,7 +13,7 @@ public class Boxer1Health : MonoBehaviour {
 	[SerializeField]
 	Slider healthbar;
 
-	float maxHealth = 100f;
+	float maxHealth = 200f;
 	float currentHealth;
 
 	void Start (){
@@ -24,7 +24,7 @@ public class Boxer1Health : MonoBehaviour {
 	}
 
 	public void jabHit(){
-		healthbar.value -= 100f;
+		healthbar.value -= 5f;
 		currentHealth = healthbar.value;
 		score.boxer2Attack1Points();
 	}
@@ -73,6 +73,6 @@ public class Boxer1Health : MonoBehaviour {
 	}
 
 	public void roundIncrease(){
-		healthbar.value *= 1.5f;
+		healthbar.value *= 1.15f;
 	}
 }

@@ -36,7 +36,7 @@ public class Boxer2Attacks : MonoBehaviour {
 		boxer2KnockedDown = FindObjectOfType<Boxer2Health> ();
 		boxer2Down = boxer2KnockedDown.down;
 
-		if (boxer1Down == false && boxer2Down == false) {
+		if (boxer1Down == false && boxer2Down == false && PauseMenu.gamePaused == false) {
 			if (Input.GetButtonDown ("Controller2AButton") && currentStamina >= 10f) {
 				anim.SetBool ("Jab", true);
 				attack = 1;

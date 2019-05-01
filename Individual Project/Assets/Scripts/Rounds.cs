@@ -36,6 +36,9 @@ public class Rounds : MonoBehaviour {
 	public Boxer1Health boxer1HealthIncrease;
 	public Boxer2Health boxer2HealthIncrease;
 
+	public Boxer1Stamina boxer1MaxStaminaDecrease;
+	public Boxer2Stamina boxer2MaxStaminaDecrease;
+
 	public PointCounter points;
 	public int boxer1RoundPoints;
 	public int boxer2RoundPoints;
@@ -44,11 +47,20 @@ public class Rounds : MonoBehaviour {
 	public int boxer1KnockDowns;
 	public int boxer2KnockDowns;
 
+	[SerializeField]
+	Image player1Wins;
+	[SerializeField]
+	Image player2Wins;
+	[SerializeField]
+	Image draw;
+
 	void Start() {
 		boxer1Position = FindObjectOfType<Boxer1Movement>();
 		boxer2Position = FindObjectOfType<Boxer2Movement>();
 		boxer1HealthIncrease = FindObjectOfType<Boxer1Health> ();
 		boxer2HealthIncrease  = FindObjectOfType<Boxer2Health> ();
+		boxer1MaxStaminaDecrease= FindObjectOfType<Boxer1Stamina> ();
+		boxer2MaxStaminaDecrease = FindObjectOfType<Boxer2Stamina> ();
 	}
 		
 	private void Update()
@@ -161,6 +173,8 @@ public class Rounds : MonoBehaviour {
 			}
 			boxer1HealthIncrease.roundIncrease ();
 			boxer2HealthIncrease.roundIncrease ();
+			boxer1MaxStaminaDecrease.decreaseMaxStamina();
+			boxer2MaxStaminaDecrease.decreaseMaxStamina();
 			roundNumber++;
 			if (roundNumber < 5) {
 				roundTime = 120f;
@@ -169,17 +183,17 @@ public class Rounds : MonoBehaviour {
 				points.resetPoints ();
 			} else {
 				if (boxer1Points > boxer2Points) {
-					Debug.Log ("1");
+					player1Wins.enabled = true;
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;
 				} else if (boxer1Points < boxer2Points) {
-					Debug.Log ("2");
+					player2Wins.enabled = true;
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;
 				} else {
-					Debug.Log ("3");
+					draw.enabled = true;
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;

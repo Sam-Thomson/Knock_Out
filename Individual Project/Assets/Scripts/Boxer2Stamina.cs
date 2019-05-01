@@ -13,11 +13,6 @@ public class Boxer2Stamina : MonoBehaviour {
 
 	float recoverSpeed = 10f;
 
-	/*void Start () {
-		staminabar.value = maxStamina;
-		//currentStamina = staminabar.value;
-	}*/
-
 	public void jabStamina() {
 		staminabar.value -= 10f;
 		currentStamina = staminabar.value;
@@ -45,7 +40,7 @@ public class Boxer2Stamina : MonoBehaviour {
 
 	public void bodyCrossStamina() {
 		staminabar.value -= 10f;
-		//currentStamina = staminabar.value;
+		currentStamina = staminabar.value;
 	}
 
 	public void blockStamina() {
@@ -60,6 +55,14 @@ public class Boxer2Stamina : MonoBehaviour {
 
 	void Update () {
 		staminabar.value += recoverSpeed * Time.deltaTime;
+		if(staminabar.value > maxStamina){
+			staminabar.value = maxStamina;
+		}
+		currentStamina = staminabar.value;
+	}
+
+	public void decreaseMaxStamina() {
+		maxStamina -= 20f;
 		currentStamina = staminabar.value;
 	}
 }

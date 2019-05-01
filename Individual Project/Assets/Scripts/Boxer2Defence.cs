@@ -35,7 +35,7 @@ public class Boxer2Defence : MonoBehaviour {
 		attackType = boxer1Attacks.attack;
 		pointIncrease = FindObjectOfType<PointCounter> ();
 
-		if (boxer1Down == false && boxer2Down == false) {
+		if (boxer1Down == false && boxer2Down == false && PauseMenu.gamePaused == false) {
 			if (Input.GetButtonDown ("Controller2LeftStick") && currentStamina >= 20f) {
 				anim.SetBool ("BackDodge", true);
 				stamina.dodgeStamina ();
