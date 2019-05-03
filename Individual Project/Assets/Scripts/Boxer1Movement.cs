@@ -65,11 +65,6 @@ public class Boxer1Movement : MonoBehaviour {
 				anim.SetBool ("MoveRight", false);
 			}
 		}
-
-		if(Input.GetKeyDown (KeyCode.Escape))
-		{
-			Application.Quit();
-		}
 			
 	}
 

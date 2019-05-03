@@ -29,6 +29,15 @@ public class PointCounter : MonoBehaviour {
 	public void boxer2DefencePoints(){
 		boxer2Points = boxer2Points + 2;
 	}
+
+	public void boxer1KnockedDown(){
+		boxer2Points = boxer2Points + 20;
+	}
+
+	public void boxer2KnockedDown(){
+		boxer1Points = boxer1Points + 20;
+	}
+
 	public void resetPoints(){
 		boxer1Points = 0;
 		boxer2Points = 0;

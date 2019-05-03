@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Rounds : MonoBehaviour {
 
@@ -47,6 +48,8 @@ public class Rounds : MonoBehaviour {
 	public int boxer1KnockDowns;
 	public int boxer2KnockDowns;
 
+	public bool gameOver = false;
+
 	[SerializeField]
 	Image player1Wins;
 	[SerializeField]
@@ -63,7 +66,7 @@ public class Rounds : MonoBehaviour {
 		boxer2MaxStaminaDecrease = FindObjectOfType<Boxer2Stamina> ();
 	}
 		
-	private void Update()
+	void Update()
 	{
 		points = FindObjectOfType<PointCounter> ();
 		boxer1RoundPoints = points.boxer1Points;
@@ -176,6 +179,10 @@ public class Rounds : MonoBehaviour {
 			boxer1MaxStaminaDecrease.decreaseMaxStamina();
 			boxer2MaxStaminaDecrease.decreaseMaxStamina();
 			roundNumber++;
+			knockDowns.boxer1RoundKDs = 0;
+			knockDowns.boxer2RoundKDs = 0;
+			boxer1KnockDowns = 0;
+			boxer2KnockDowns = 0;
 			if (roundNumber < 5) {
 				roundTime = 120f;
 				boxer1Position.resetPosition ();
@@ -187,17 +194,21 @@ public class Rounds : MonoBehaviour {
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;
+					gameOver = true;
 				} else if (boxer1Points < boxer2Points) {
 					player2Wins.enabled = true;
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;
+					gameOver = true;
 				} else {
 					draw.enabled = true;
 					round.enabled = false;
 					roundTimer.enabled = false;
 					roundNumberText.enabled = false;
+					gameOver = true;
 				}
+
 			}
 		
 		}

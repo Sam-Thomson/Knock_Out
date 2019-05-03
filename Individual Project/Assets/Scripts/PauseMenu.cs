@@ -12,7 +12,10 @@ public class PauseMenu : MonoBehaviour {
 	public EventSystem eventSystem;
 	private GameObject selectedObject;
 
+	AudioSource crowd;
+
 	void Update () {
+		crowd = FindObjectOfType<AudioSource>();
 		if (Input.GetButtonDown ("PauseMenu")) {
 			if (gamePaused == true) {
 				Resume();
@@ -33,6 +36,7 @@ public class PauseMenu : MonoBehaviour {
 		pauseMenuUI.SetActive (false);
 		Time.timeScale = 1;
 		gamePaused = false;
+		crowd.Play();
 	}
 
 	void Pause () {
@@ -40,6 +44,7 @@ public class PauseMenu : MonoBehaviour {
 		Time.timeScale = 0;
 		gamePaused = true;
 		selectedObject = eventSystem.firstSelectedGameObject;
+		crowd.Pause();
 	}
 
 	public void Quit(){
